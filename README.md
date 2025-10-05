@@ -91,30 +91,32 @@ Para verificar a versão instalada e testar a execução de um conteiner Docker.
 ```
 docker version
 docker run hello-world
-````
+```
 
 :exclamation: Para instalar suporte a RISC-V no Docker.
-`docker run --privileged --rm tonistiigi/binfmt --install all``
+
+```
+docker run --privileged --rm tonistiigi/binfmt --install all
+```
 
 
 ### Instalação do node.js
 
 ```
-# Download and install nvm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-
-# in lieu of restarting the shell
 \. "$HOME/.nvm/nvm.sh"
-
-# Download and install Node.js:
 nvm install 22
 
-# Verify the Node.js version:
-node -v # Should print "v22.20.0".
-
-# Verify npm version:
-npm -v # Should print "10.9.3".
 ```
+
+
+Para verificar as versões instaladas:
+```
+node -v
+npm -v
+```
+
+
 
 
 
