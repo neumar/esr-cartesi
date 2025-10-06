@@ -16,7 +16,7 @@ Neste repositório, temos a implementação de uma aplicação descentralizada u
 
 Esta implementação é o trabalho prático final apresentado no curso "Introdução a Blockchain, Web 3 e Rollups" ofertado pela [Escola Superior de Redes da RNP](https://esr.rnp.br/) e ministrado pelo [Prof. Antonio "Guto" Rocha](http://www2.ic.uff.br/~arocha/) do IC/UFF.
 
-## Referências, Tutoriais e Rerramentas
+## Referências, Tutoriais e Ferramentas
 
 ### Blockchain no Setor Elétrico
 
@@ -124,8 +124,7 @@ Utilizar o [Metamask](https://metamask.io/download) para interagir com a aplica�
 - [REMIX](https://remix.ethereum.org/): uma IDE para deploy de contratos inteligentes
 - [deroll](https://deroll.dev/): biblioteca para desenvolvimento de aplicações com a Cartesi.
 - [Foundry](https://getfoundry.sh/introduction/getting-started): kit de ferramentas para desenolvimenot de apilcações Ethereum. 
-- [Contas e chaves privadas](https://getfoundry.sh/anvil/overview
-) do Anvil para testar localmente as aplicações Cartesi.  
+- [Contas e chaves privadas](https://getfoundry.sh/anvil/overview) do Anvil para testar localmente as aplicações Cartesi.  
 - Run `cartesi address-book` to get the addresses of the EtherPortal and DAppAddressRelay contracts. Save these as constants in the index.ts file.
 - The dApp address needs to be relayed strictly before withdrawal requests. To relay the dApp address, run `cartesi send dapp-address`
 
@@ -142,7 +141,6 @@ chmod +x generate_abis.sh
 ./generate_abis.sh
 cartesi build
 cartesi run --epoch-length=1
-
 ```
 
 
