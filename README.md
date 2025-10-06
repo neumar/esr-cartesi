@@ -30,7 +30,7 @@ Alguns artidos científicos sobre aplicações blockchain no setor elétrico.
 
 ### Cursos e Documentação sobre a Cartesi
 
-- [Documentção](https://docs.cartesi.io/get-started) oficial da Cartesi.
+- [Documentação](https://docs.cartesi.io/get-started) oficial da Cartesi.
 - Curso free na Udemy: [The Cartesi dApp Developer Masterclass](https://www.udemy.com/course/cartesi-masterclass/).
 
 ## Configuração do Ambiente de Execução
@@ -132,7 +132,7 @@ Utilizar o [Metamask](https://metamask.io/download) para interagir com a aplica�
 ## Obter e Executar a Aplicação
 
 ```
-https://github.com/neumar/esr-cartesi.git
+git clone https://github.com/neumar/esr-cartesi.git
 cd esr-cartesi
 yarn
 yarn run codegen
