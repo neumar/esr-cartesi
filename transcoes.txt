@@ -1,0 +1,37 @@
+
+Accounts
+
+Concessionaria de Energia 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Residencia 1              0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+Residencia 2              0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+Posto de recarga para EV. 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+
+inspect balance
+
+http://localhost:8080/inspect/0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266/0x663F3ad617193148711d28f5334eE4Ed07016602
+http://localhost:8080/inspect/0x70997970C51812dc3A010C7d01b50e0d17dc79C8/0x663F3ad617193148711d28f5334eE4Ed07016602
+http://localhost:8080/inspect/0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC/0x663F3ad617193148711d28f5334eE4Ed07016602
+http://localhost:8080/inspect/0x90F79bf6EB2c4f870365E785982E1f101E93b906/0x663F3ad617193148711d28f5334eE4Ed07016602
+
+echo "0x7465737465" | xxd -r
+
+deposito para Concessionaria
+1000 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+
+Tranferencia de 300 ELC da Concessionaria para residencia 1 
+{"operation":"transfer","erc20":"0x663F3ad617193148711d28f5334eE4Ed07016602","from":"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266","to":"0x70997970C51812dc3A010C7d01b50e0d17dc79C8","amount":"300000000000000000000"}
+
+Tranferencia de 400 ELC da Concessionaria para residencia 2 
+{"operation":"transfer","erc20":"0x663F3ad617193148711d28f5334eE4Ed07016602","from":"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266","to":"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC","amount":"400000000000000000000"}
+
+Tranferencia de 250 ELC da residencia 2 para recarga de EV
+{"operation":"transfer","erc20":"0x663F3ad617193148711d28f5334eE4Ed07016602","from":"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC","to":"0x90F79bf6EB2c4f870365E785982E1f101E93b906","amount":"250000000000000000000"}
+
+Tranferencia de 100 ELC da residencia 2 para residencia 1
+{"operation":"transfer","erc20":"0x663F3ad617193148711d28f5334eE4Ed07016602","from":"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC","to":"0x70997970C51812dc3A010C7d01b50e0d17dc79C8","amount":"100000000000000000000"}
+
+
+
+
+withdraw 20
+{"operation":"withdraw","erc20":"0x663F3ad617193148711d28f5334eE4Ed07016602","from":"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266","amount":"20000000000000000000"}

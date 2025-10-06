@@ -32,31 +32,21 @@ Alguns artidos científicos sobre aplicações blockchain no setor elétrico.
 
 - [Documentção](https://docs.cartesi.io/get-started) oficial da Cartesi.
 - Curso free na Udemy: [The Cartesi dApp Developer Masterclass](https://www.udemy.com/course/cartesi-masterclass/).
-- https://deroll.dev/
-- jq - Command-line JSON processor
-- xxd - make a hex dump or do the reverse.
-- https://getfoundry.sh/introduction/getting-started
-
-
-
-
-private keys
-https://getfoundry.sh/anvil/overview
 
 ## Configuração do Ambiente de Execução
 
-Para executar a aplicação, precisamos configurar o ambiente operacioal como a seguir, a partir de uma máquina com sistema Ubuntu 25.04. Para ter um ambiente controlodo, o melhor seria criar uma máquina virtual, por exemplo, com o [VirtualBox](https://www.virtualbox.org/).
+Para executar a aplicação, precisamos configurar o ambiente operacioal como a seguir, a partir de uma máquina com sistema Ubuntu 25.04. Para ter um ambiente controlado, o melhor seria criar uma máquina virtual, por exemplo, com o [VirtualBox](https://www.virtualbox.org/).
 
 Se preferir, temos um vídeo explicando todos os passos descritos a seguir.
 
-### Atualização do Sistema
+### Atualizar o Sistema
 
 ```
 sudo apt update
 sudo apt upgrade
 ````
 
-### Instalação do Docker
+### Instalar o Docker
 
 O Docker é uma plataforma de virtualização em nível de SO. Seugem os passos para instalação no Ubuntu, conforme a [documentação oficial](https://docs.docker.com/engine/install/ubuntu/).
 
@@ -78,9 +68,9 @@ echo \
 
 sudo apt update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-Para conceder permissão ao seu usuáio para executar o docker:
+Para conceder permissão ao seu usuário para executar o docker:
 
 `sudo usermod -aG docker $USER`
 
@@ -99,16 +89,13 @@ docker run hello-world
 docker run --privileged --rm tonistiigi/binfmt --install all
 ```
 
-
-### Instalação do node.js
+### Instalar o node.js
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 \. "$HOME/.nvm/nvm.sh"
 nvm install 22
-
 ```
-
 
 Para verificar as versões instaladas:
 ```
@@ -116,10 +103,47 @@ node -v
 npm -v
 ```
 
+### Instalar da Cartesi CLI
+```
+npm i -g @cartesi/cli
+```
+
+### Instalar o Comilador Solidity
+```
+npm install --global solc
+```
+
+### Instalar Metamask
+
+Utilizar o [Metamask](https://metamask.io/download) para interagir com a aplicação blockchain.
+
+### Comandos e Ferramentas de Apoio
 
 
+- xxd - make a hex dump or do the reverse.
+- [REMIX](https://remix.ethereum.org/): uma IDE para deploy de contratos inteligentes
+- [deroll](https://deroll.dev/): biblioteca para desenvolvimento de aplicações com a Cartesi.
+- [Foundry](https://getfoundry.sh/introduction/getting-started): kit de ferramentas para desenolvimenot de apilcações Ethereum. 
+- [Contas e chaves privadas](https://getfoundry.sh/anvil/overview
+) do Anvil para testar localmente as aplicações Cartesi.  
+- Run `cartesi address-book` to get the addresses of the EtherPortal and DAppAddressRelay contracts. Save these as constants in the index.ts file.
+- The dApp address needs to be relayed strictly before withdrawal requests. To relay the dApp address, run `cartesi send dapp-address`
 
+## Obter e Executar a Aplicação
 
+```
+https://github.com/neumar/esr-cartesi.git
+cd esr-cartesi
+yarn
+yarn run codegen
+yarn add ethers viem
+yarn add -D  @cartesi/rollups@1.4.5
+chmod +x generate_abis.sh
+./generate_abis.sh
+cartesi build
+cartesi run --epoch-length=1
+
+```
 
 
 
